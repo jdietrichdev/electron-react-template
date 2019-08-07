@@ -4,9 +4,11 @@
   "description": "Template for desktop applications using Electron and React",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "start-react": "webpack-dev-server --mode development",
+    "build-react": "webpack --mode production",
+    "build-electron": "electron .",
+    "start-project": "npm run build-react && npm run build-electron",
+    "build-project": "npm run build-react && electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
   },
   "dependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.12.10"
   }
 }
