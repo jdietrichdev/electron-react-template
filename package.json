@@ -8,8 +8,7 @@
     "build-react": "webpack",
     "start-electron": "electron main.js",
     "start-project": "npm run build-react && npm run start-electron",
-    "package-project": "electron-builder --dir",
-    "distribute-project": "electron-builder"
+    "build-project": "electron-builder"
   },
   "build": {
     "appId": "electron.react.template",
