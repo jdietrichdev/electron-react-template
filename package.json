@@ -26,21 +26,21 @@
   },
   "homepage": "https://github.com/jdietrichdev/electron-react-template#readme",
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
-    "electron": "^6.0.1",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "electron": "^6.1.12",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.10"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21"
   }
 }
