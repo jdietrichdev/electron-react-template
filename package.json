@@ -4,11 +4,19 @@
   "description": "Template for desktop applications using Electron and React",
   "main": "main.js",
   "scripts": {
-    "start-react": "webpack-dev-server --mode development",
-    "build-react": "webpack --mode production",
-    "build-electron": "electron .",
-    "start-project": "npm run build-react && npm run build-electron",
-    "build-project": "npm run build-react && electron-forge make"
+    "start-react": "webpack-dev-server --config webpack.config.dev.js",
+    "build-react": "webpack",
+    "start-electron": "electron main.js",
+    "start-project": "npm run build-react && npm run start-electron",
+    "package-project": "electron-builder --dir",
+    "distribute-project": "electron-builder"
+  },
+  "build": {
+    "appId": "electron.react.template",
+    "files": [
+      "main.js",
+      "assets/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -30,9 +38,12 @@
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@electron-forge/maker-zip": "^6.0.0-beta.52",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "electron": "^6.1.12",
+    "electron-builder": "^22.8.0",
+    "html-webpack-plugin": "^4.3.0",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",

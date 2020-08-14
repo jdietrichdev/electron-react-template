@@ -1,9 +1,9 @@
 const path = require("path");
-const webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
+  entry: "./src/website/index.js",
+  mode: "production",
   module: {
     rules: [
       {
@@ -14,21 +14,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
       }
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
-    filename: "bundle.js"
+    path: path.resolve(__dirname, "assets/"),
+    filename: "[name].[hash].js"
   },
-  devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/website/public/index.template.html",
+      filename: "index.html"
+    })
+  ]
 };
